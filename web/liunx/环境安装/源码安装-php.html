@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>源码安装nginx · GitBook</title>
+        <title>源码安装php · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="源码安装-php.html" />
+    <link rel="next" href="mysql-源码安装.html" />
     
+    
+    <link rel="prev" href="源码安装-nginx.html" />
     
 
     </head>
@@ -199,7 +201,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1.1" data-path="源码安装-nginx.html">
+        <li class="chapter " data-level="1.4.1.1" data-path="源码安装-nginx.html">
             
                 <a href="源码安装-nginx.html">
             
@@ -212,7 +214,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.2" data-path="源码安装-php.html">
+        <li class="chapter active" data-level="1.4.1.2" data-path="源码安装-php.html">
             
                 <a href="源码安装-php.html">
             
@@ -400,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >源码安装nginx</a>
+        <a href="../.." >源码安装php</a>
     </h1>
 </div>
 
@@ -415,23 +417,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;-&#x662F;-&#x6BCF;&#x6B21;&#x91CD;&#x542F;&#x673A;&#x5668;&#x90FD;&#x8981;&#x91CD;&#x65B0;&#x6307;&#x5B9A;&#x914D;&#x7F6E;-&#xFF08;&#x5F85;&#x89E3;&#x51B3;&#xFF09;">&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898; &#x662F; &#x6BCF;&#x6B21;&#x91CD;&#x542F;&#x673A;&#x5668;&#x90FD;&#x8981;&#x91CD;&#x65B0;&#x6307;&#x5B9A;&#x914D;&#x7F6E; &#xFF08;&#x5F85;&#x89E3;&#x51B3;&#xFF09;</h3>
-<pre><code>/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
-</code></pre><h2 id="&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x5305;-----nginx-1160-tar&#x5305;">&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#x5305;     nginx-1.16.0 tar&#x5305;</h2>
-<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x5B89;&#x88C5;">&#x81EA;&#x5B9A;&#x4E49;&#x5B89;&#x88C5;</h3>
-<pre><code>./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/conf/nginx.conf --pid-path=/usr/local/nginx/conf/nginx.pid --lock-path=/var/lock/nginx.lock --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-http_gzip_static_module --http-client-body-temp-path=/var/temp/nginx/client --http-proxy-temp-path=/var/temp/nginx/proxy --http-fastcgi-temp-path=/var/temp/nginx/fastcgi --http-uwsgi-temp-path=/var/temp/nginx/uwsgi --http-scgi-temp-path=/var/temp/nginx/scgi
+                                <h2 id="&#x6E90;&#x7801;&#x5B89;&#x88C5;php-7219">&#x6E90;&#x7801;&#x5B89;&#x88C5;php 7.2.19</h2>
+<h3 id="&#x6E90;&#x7801;&#x5B89;&#x88C5;&#x7684;&#x75DB;&#x82E6;">&#x6E90;&#x7801;&#x5B89;&#x88C5;&#x7684;&#x75DB;&#x82E6;</h3>
+<pre><code>    -- &#x5B89;&#x88C5;&#x5207;&#x8BB0;&#x5F00;&#x542F;mysqli &#x548C; mysqlnd &#xFF08;&#x6211;&#x6389;&#x8FDB;&#x53BB;&#x7684;&#x5751;&#xFF09;
+    -- &#x64CD;&#x4F5C;&#x65B9;&#x6CD5; --enable-pdo 
+             --with-pdo-mysql
+             --enable-mysqlnd 
+              --with-mysqli
+    -- &#x8FD8;&#x8981;&#x67E5;&#x770B; php.ini &#x7684;&#x4F4D;&#x7F6E; &#x653E;&#x7F6E;&#x6B63;&#x786E;&#xFF0C;&#xFF08;&#x5751;&#xFF09;
+    --&#x603B;&#x7ED3; &#x56E0;&#x4E3A; php &#x7684;&#x52A0;&#x8F7D;&#x7684;&#x6269;&#x5C55; &#xFF08;&#x6709;&#x4E00;&#x4E9B;&#x6269;&#x5C55;&#x63D0;&#x524D;&#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x6700;&#x597D;&#xFF0C;&#x7701;&#x7684;&#x56DE;&#x5934;&#x518D;&#x88C5; &#x9EBB;&#x70E6;&#xFF09;
+</code></pre><h3 id="1-&#x5148;&#x4E0B;&#x8F7D;&#x5305;">1-&#x5148;&#x4E0B;&#x8F7D;&#x5305;</h3>
+<h3 id="2-&#x5B89;&#x88C5;&#x6E90;&#x7801;&#x5B89;&#x88C5;&#x7684;&#x6269;&#x5C55;-&#x5177;&#x4F53;&#x9700;&#x8981;&#x54EA;&#x4E9B;&#x5B89;&#x88C5;&#x54EA;&#x4E9B;-&#x5982;gcc-&#x548C;-g-&#x7684;&#x73AF;&#x5883;">2-&#x5B89;&#x88C5;&#x6E90;&#x7801;&#x5B89;&#x88C5;&#x7684;&#x6269;&#x5C55; &#x5177;&#x4F53;&#x9700;&#x8981;&#x54EA;&#x4E9B;&#x5B89;&#x88C5;&#x54EA;&#x4E9B; &#x5982;gcc &#x548C; g++ &#x7684;&#x73AF;&#x5883;</h3>
+<h3 id="3-&#x5B89;&#x88C5;&#x4F9D;&#x8D56;">3-&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</h3>
+<pre><code>yum install -y gcc
+yum install -y gcc-c++
 
---prefix=path    &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x5B58;&#x653E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6587;&#x4EF6; &#xFF0C;&#x4E5F;&#x5C31;&#x662F;nginx&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x3002;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; /usr/local/nginx&#x3002;
---sbin-path=path &#x8BBE;&#x7F6E;nginx&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;  prefix/sbin/nginx.
---conf-path=path  &#x8BBE;&#x7F6E;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;nginx&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x542F;&#x52A8;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x7684;-c&#x9009;&#x9879;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;prefix/conf/nginx.conf.
+yum -y install libxml2
+yum -y install libxml2-devel 
+(ps&#xFF1A;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;2&#x4E2A;&#x5E93;&#x7684;&#x533A;&#x522B;  lib,lib-dev&#xFF0C;&#x524D;&#x4E00;&#x4E2A;&#x662F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#x7684;&#x5E93;&#xFF0C;&#x540E;&#x4E00;&#x4E2A;&#x662F;&#x7F16;&#x8BD1;&#x6E90;&#x7801;&#x65F6;&#x9700;&#x8981;&#x7684;&#x5E93;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4E00;&#x4E2A;&#x662F;&#x8FD0;&#x884C;&#x5E93;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5F00;&#x53D1;&#x5E93;)
+</code></pre><h3 id="4-&#x6267;&#x884C;configure&#x6587;&#x4EF6;">4-&#x6267;&#x884C;configure&#x6587;&#x4EF6;</h3>
+<pre><code>./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php --with-curl --with-freetype-dir --with-gd --with-gettext --with-iconv-dir --with-kerberos --with-libdir=lib64 --with-libxml-dir --with-mysqli --with-openssl --with-pcre-regex --with-pdo-mysql --with-pdo-sqlite --with-pear --with-png-dir --with-jpeg-dir --with-xmlrpc --with-xsl --with-zlib --with-bz2 --with-mhash --enable-fpm --enable-bcmath --enable-libxml --enable-inline-optimization --enable-gd-native-ttf --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-sysvshm --enable-xml --enable-zip
 
---pid-path=path  &#x8BBE;&#x7F6E;nginx.pid&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x7684;&#x4E3B;&#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x53F7;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C; &#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; PID&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/nginx.pid.
 
---error-log-path=path &#x8BBE;&#x7F6E;&#x4E3B;&#x9519;&#x8BEF;&#xFF0C;&#x8B66;&#x544A;&#xFF0C;&#x548C;&#x8BCA;&#x65AD;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528; &#x7684;error_log&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/error.log.
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php  --with-mysqli --with-pdo-mysql  --enable-fpm --enable-bcmath --enable-libxml --enable-inline-optimization --enable-gd-native-ttf --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-sysvshm --enable-xml --enable-zip
 
---http-log-path=path  &#x8BBE;&#x7F6E;&#x4E3B;&#x8BF7;&#x6C42;&#x7684;HTTP&#x670D;&#x52A1;&#x5668;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528; &#x7684;access_log&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/access.log.
-</code></pre><h3 id="make----make-install">make  &amp;&amp;  make install</h3>
-<h3 id="&#x542F;&#x52A8;-&#x65F6;&#x5019;&#x6CE8;&#x610F;&#x6267;&#x884C;nginx--&#x52A0;&#x8F7D;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x6587;&#x4EF6;-&#xFF08;usrlocalnginxsbinnginx--c-usrlocalnginxconfnginxconf&#xFF09;">&#x542F;&#x52A8; &#x65F6;&#x5019;&#x6CE8;&#x610F;&#x6267;&#x884C;nginx  &#x52A0;&#x8F7D;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x6587;&#x4EF6; &#xFF08;/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf&#xFF09;</h3>
+
+ ps &#x8FD9;&#x91CC;&#x6CE8;&#x610F;  &#x5982;&#x679C;&#x5F00;&#x542F;&#x592A;&#x591A;&#x5E93;&#x548C;&#x6269;&#x5C55; &#x5BFC;&#x81F4; make &amp; make install &#x5931;&#x8D25;
+
+&#x53C2;&#x6570;&#x89E3;&#x91CA;
+--prefix=PATH &#x5B89;&#x88C5;&#x5230;&#x54EA;&#x4E2A;&#x76EE;&#x5F55;&#x91CC;&#x9762;
+--bindir=DIRECTORY   
+    &#x4E3A;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x58F0;&#x660E;&#x76EE;&#x5F55;&#xFF0C;&#x7F3A;&#x7701;&#x662F;   EXEC-PREFIX/bin&#xFF0C;   &#x901A;&#x5E38;&#x4E5F;&#x5C31;&#x662F;   /usr/local/pgsql/bin&#xFF0E;
+
+ --with-curl &#x9700;&#x8981;&#x5B89;&#x88C5;&#x7684;php &#x5305;&#xFF08;&#x4F8B;&#x5982;curl gd&#x5E93; &#x7B49;&#xFF09;
+
+ --enable-syslog   &#x5F00;&#x542F;&#x5B89;&#x88C5;&#x7684;&#x529F;&#x80FD;(&#x4F8B;&#x5982; fpm zip pcntl &#x7B49;php&#x6269;&#x5C55;) 
+
+ --with-config-file-path=/usr/local/php  &#xFF08;&#x8FD9;&#x6837;&#x7684;&#x8BDD;php&#x5C31;&#x56DE;&#x53BB;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x8BFB;&#x53D6;php.ini&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;php&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;lib&#x76EE;&#x5F55;&#xFF0C;&#x5177;&#x4F53;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;phpinfo()&#x8F93;&#x51FA;&#x754C;&#x9762;&#x67E5;&#x770B;&#xFF0C;&#x5982;&#x679C;php.ini&#x653E;&#x5230;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#xFF0C;php&#x8BFB;&#x53D6;&#x4E0D;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x7684;&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x540E;&#x90FD;&#x662F;&#x4E0D;&#x751F;&#x6548;&#x7684;&#xFF0C;&#x8FD9;&#x70B9;&#x8981;&#x6CE8;&#x610F;&#xFF09;
+</code></pre><h3 id="5-make">5-make</h3>
+<h3 id="6-make-install--&#xFF08;&#x6216;&#x8005;-5-6-&#x5408;&#x5728;&#x4E00;&#x8D77;make--make-install&#xFF09;">6-make install  &#xFF08;&#x6216;&#x8005; 5 6 &#x5408;&#x5728;&#x4E00;&#x8D77;make &amp;&amp; make install&#xFF09;</h3>
 
                                 
                                 </section>
@@ -459,8 +483,12 @@
 
             
                 
+                <a href="源码安装-nginx.html" class="navigation navigation-prev " aria-label="Previous page: 源码安装nginx">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="源码安装-php.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 源码安装php">
+                
+                <a href="mysql-源码安装.html" class="navigation navigation-next " aria-label="Next page: 源码安装mysql">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +499,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"源码安装nginx","level":"1.4.1.1","depth":3,"next":{"title":"源码安装php","level":"1.4.1.2","depth":3,"path":"liunx/环境安装/源码安装-php.md","ref":"liunx/环境安装/源码安装-php.md","articles":[]},"previous":{"title":"[第1节：环境安装]","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"源码安装nginx","level":"1.4.1.1","depth":3,"path":"liunx/环境安装/源码安装-nginx.md","ref":"liunx/环境安装/源码安装-nginx.md","articles":[]},{"title":"源码安装php","level":"1.4.1.2","depth":3,"path":"liunx/环境安装/源码安装-php.md","ref":"liunx/环境安装/源码安装-php.md","articles":[]},{"title":"源码安装mysql","level":"1.4.1.3","depth":3,"path":"liunx/环境安装/mysql-源码安装.md","ref":"liunx/环境安装/mysql-源码安装.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"liunx/环境安装/源码安装-nginx.md","mtime":"2019-07-03T03:09:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-19T10:01:00.941Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"源码安装php","level":"1.4.1.2","depth":3,"next":{"title":"源码安装mysql","level":"1.4.1.3","depth":3,"path":"liunx/环境安装/mysql-源码安装.md","ref":"liunx/环境安装/mysql-源码安装.md","articles":[]},"previous":{"title":"源码安装nginx","level":"1.4.1.1","depth":3,"path":"liunx/环境安装/源码安装-nginx.md","ref":"liunx/环境安装/源码安装-nginx.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"liunx/环境安装/源码安装-php.md","mtime":"2019-07-03T03:21:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-19T09:56:20.368Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

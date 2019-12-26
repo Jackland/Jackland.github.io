@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="elastic-stack基础学习.html" />
+    
     
     <link rel="prev" href="yii2学习.html" />
     
@@ -172,6 +174,32 @@
             
                     
                     第4节：rabbitmq基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="elastic-stack基础学习.html">
+            
+                <a href="elastic-stack基础学习.html">
+            
+                    
+                    第5节：elastic-stack基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="elastic使用.html">
+            
+                <a href="elastic使用.html">
+            
+                    
+                    第5节：elastic-stack使用
             
                 </a>
             
@@ -476,7 +504,8 @@
 <p>&#x5B89;&#x88C5;</p>
 <blockquote>
 <p>service rabbitmq-server start &#x542F;&#x52A8;<br>service rabbitmq-server stop   &#x505C;&#x6B62;
-service rabbitmq-server restart &#x91CD;&#x542F; </p>
+service rabbitmq-server restart &#x91CD;&#x542F; 
+<a href="http://192.168.116.134:15672&#xFF08;&#x4E3B;&#x673A;&#x52A0;&#x7AEF;&#x53E3;&#xFF09;" target="_blank">http://192.168.116.134:15672&#xFF08;&#x4E3B;&#x673A;&#x52A0;&#x7AEF;&#x53E3;&#xFF09;</a></p>
 </blockquote>
 <h4 id="rabbitmq-&#x539F;&#x7406;">rabbitmq &#x539F;&#x7406;</h4>
 <p>&#x751F;&#x4EA7;&#x8005;  =&gt;&#x4EA4;&#x6362;&#x5668;=&gt; &#x8DEF;&#x7531;&#x952E;=&gt;&#x7ED1;&#x5B9A;&#x952E;=&gt;&#x961F;&#x5217;=&gt;&#x6D88;&#x8D39;&#x8005;</p>
@@ -549,6 +578,12 @@ Topic&#x7C7B;&#x578B;&gt;.&gt;&gt;&gt;&gt;  &#x5219;&#x4F1A;&#x6309;&#x7167;&#x6
         $ticket = null</p>
 <p>queue_bind()&#x7ED1;&#x5B9A;&#x8DEF;&#x7531;</p>
 <p>basic_consume()&#x67D0;&#x4E2A;&#x961F;&#x5217;&#x4E0A;&#x6CE8;&#x518C;&#x6D88;&#x8D39;&#x8005;,&#x5F00;&#x59CB;&#x6D88;&#x8D39;</p>
+<p>basic_qos(prefetch_size, prefetch_count, globa)
+prefetch_size  &#x6700;&#x5927;unacked&#x6D88;&#x606F;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF1B;
+prefetch_count  &#x6700;&#x5927;unacked&#x6D88;&#x606F;&#x7684;&#x6761;&#x6570;&#xFF1B;
+global&#xFF1A; &#x4E0A;&#x8FF0;&#x9650;&#x5236;&#x7684;&#x9650;&#x5B9A;&#x5BF9;&#x8C61;&#xFF0C;false=&#x9650;&#x5236;&#x5355;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF1B;true=&#x9650;&#x5236;&#x6574;&#x4E2A;&#x4FE1;&#x9053;
+&#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;consumer&#x7684;prefetch count&#xFF1A;
+global&#x6307;&#x5B9A;false&#xFF0C;&#x5373;&#x53EF;</p>
 </blockquote>
 
                                 
@@ -577,10 +612,14 @@ Topic&#x7C7B;&#x578B;&gt;.&gt;&gt;&gt;&gt;  &#x5219;&#x4F1A;&#x6309;&#x7167;&#x6
 
             
                 
-                <a href="yii2学习.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第3节：yii2基础学习">
+                <a href="yii2学习.html" class="navigation navigation-prev " aria-label="Previous page: 第3节：yii2基础学习">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="elastic-stack基础学习.html" class="navigation navigation-next " aria-label="Next page: 第5节：elastic-stack基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -589,7 +628,7 @@ Topic&#x7C7B;&#x578B;&gt;.&gt;&gt;&gt;&gt;  &#x5219;&#x4F1A;&#x6309;&#x7167;&#x6
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第4节：rabbitmq基础","level":"1.3.4","depth":2,"next":{"title":"[第二章：liunx服务架构]","level":"1.4","depth":1,"ref":"","articles":[{"title":"[第1节：环境安装]","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"源码安装nginx","level":"1.4.1.1","depth":3,"path":"liunx/环境安装/源码安装-nginx.md","ref":"liunx/环境安装/源码安装-nginx.md","articles":[]},{"title":"源码安装php","level":"1.4.1.2","depth":3,"path":"liunx/环境安装/源码安装-php.md","ref":"liunx/环境安装/源码安装-php.md","articles":[]},{"title":"源码安装mysql","level":"1.4.1.3","depth":3,"path":"liunx/环境安装/mysql-源码安装.md","ref":"liunx/环境安装/mysql-源码安装.md","articles":[]}]}]},"previous":{"title":"第3节：yii2基础学习","level":"1.3.3","depth":2,"path":"web/yii2学习.md","ref":"web/yii2学习.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"web/Rabbitmq入门.md","mtime":"2019-10-22T07:22:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-23T02:50:57.447Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第4节：rabbitmq基础","level":"1.3.4","depth":2,"next":{"title":"第5节：elastic-stack基础","level":"1.3.5","depth":2,"path":"web/elastic-stack基础学习.md","ref":"web/elastic-stack基础学习.md","articles":[]},"previous":{"title":"第3节：yii2基础学习","level":"1.3.3","depth":2,"path":"web/yii2学习.md","ref":"web/yii2学习.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"web/Rabbitmq入门.md","mtime":"2019-11-12T09:44:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-26T07:32:34.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -597,6 +636,10 @@ Topic&#x7C7B;&#x578B;&gt;.&gt;&gt;&gt;&gt;  &#x5219;&#x4F1A;&#x6309;&#x7167;&#x6
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
